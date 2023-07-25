@@ -224,10 +224,16 @@
 
     cover.addEventListener('click' , function (){
         close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+        close(burgerInfoWrap, 'burger__information--active', 'burger__information--not-active');
         close(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
         close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
+        close(orderHistory, 'order__history--active', 'order__history--not-active');
         removeActiveIcon();
     })
+}
+
+{
+    console.log(localStorage);
 }
 
 
