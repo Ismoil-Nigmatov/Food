@@ -5,9 +5,474 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jaegar Resto</title>
     <link rel="stylesheet" href="./css/main.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/82de9758c4.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    
+    <aside class="nav">
+      <ul class="nav__menu">
+        <li class="nav_list" data-tooltip="tooltip1">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-solid fa-bars fa-2xl"></i>
+          </button>
+        </li>
+        <li class="nav_list li--active">
+          <button class="nav__menu-btn nav__menu-btn--active">
+              <i style="font-size: 1.5rem" class="icons fa-solid fa-house fa-2xl aside__icon--active"></i>
+          </button>
+        </li>
+        <li class="nav_list">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-solid fa-percent fa-2xl"></i>
+          </button>
+        </li>
+        <li class="nav_list">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-solid fa-chart-pie fa-2xl"></i>
+          </button>
+        </li>
+        <li class="nav_list">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-regular fa-message fa-2xl"></i>
+          </button>
+        </li>
+        <li class="nav_list">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-regular fa-bell fa-2xl"></i>
+          </button>
+        </li>
+        <li class="nav_list" data-tooltip="tooltip7">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-solid fa-cart-shopping fa-2xl"></i>
+          </button>
+        </li>
+        <li class="nav_list" data-tooltip="tooltip8">
+          <button class="nav__menu-btn">
+              <i style="font-size: 1.5rem" class="icons fa-regular fa-user fa-2xl"></i>
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="main">
+
+        <header class="header">
+            <div class="container">
+                <div class="header__wrap">
+                    <div class="header__desc">
+                        <h1 class="hader__title">Jaegar Resto</h1>
+                        <p class="header__date">Tuesday, 2 Feb 2021</p>
+                    </div>
+                    <div class="header__input">
+                        <button class="header__input-search">
+                            <img src="./img/search-icon.svg" alt="" />
+                        </button>
+                        <input
+                                class="header__input-main"
+                                type="text"
+                                placeholder="Search for food, coffe, etc.."
+                                id=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="foods">
+            <div class="container">
+                <div class="foods__main">
+                    <a href="#" class="foods__main-btn foods__main-btn--active" data-button="content-1">Hot Dishes</a>
+                    <a href="#" class="foods__main-btn" data-button="content-2">Cold Dishes</a>
+                    <a href="#" class="foods__main-btn" data-button="content-3">Soup</a>
+                    <a href="#" class="foods__main-btn" data-button="content-4">Grill</a>
+                    <a href="#" class="foods__main-btn" data-button="content-5">Appetizer</a>
+                    <a href="#" class="foods__main-btn" data-button="content-6">Dessert</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="dishes">
+            <div class="container">
+                <div class="dishes__wrap">
+                    <div class="dishes__top">
+                        <h2 class="dishes__top-title">Choose Dishes</h2>
+                        <div class="dishes__top-dropdown">
+                            <a class="dishes__top-dropdown-btn">
+                                <img src="img/dropdown-icon.svg" class="fa-solid" alt="">
+                            </a>
+                            <h3 class="dishes__top-dropdown-p">Price</h3>
+                            <div class="dishes__dropdown-content" id="dropdown-content">
+                                <a class="dishes__top-dropdown-p dropdown__p">Name</a>
+                                <a class="dishes__top-dropdown-p dropdown__p">Available</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dish__main-act dish__main--active" id="content-1">
+                        <div class="dish__main">
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-1.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Spicy seasoned seafood noodles</h3>
+                                    <p class="dish__item-price">$ 2.99</p>
+                                    <p class="dish__items-p">20 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-2.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Salted Pasta with mushroom sauce</h3>
+                                    <p class="dish__item-price">$ 2.99</p>
+                                    <p class="dish__items-p">11 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-3.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Beef dumpling in hot and sour soup</h3>
+                                    <p class="dish__item-price">$ 2.99</p>
+                                    <p class="dish__items-p">16 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-4.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Healthy noodle with spinach leaf</h3>
+                                    <p class="dish__item-price">$ 2.99</p>
+                                    <p class="dish__items-p">22 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dish__main-act" id="content-2">
+                        <div class="dish__main">
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-2.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Salted Pasta with mushroom sauce</h3>
+                                    <p class="dish__item-price">$ 3.99</p>
+                                    <p class="dish__items-p">11 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-1.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Spicy seasoned seafood noodles</h3>
+                                    <p class="dish__item-price">$ 3.99</p>
+                                    <p class="dish__items-p">20 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-4.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Healthy noodle with spinach leaf</h3>
+                                    <p class="dish__item-price">$ 3.99</p>
+                                    <p class="dish__items-p">22 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-3.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Beef dumpling in hot and sour soup</h3>
+                                    <p class="dish__item-price">$ 3.99</p>
+                                    <p class="dish__items-p">16 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dish__main-act" id="content-3">
+                        <div class="dish__main">
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-1.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Spicy seasoned seafood noodles</h3>
+                                    <p class="dish__item-price">$ 4.99</p>
+                                    <p class="dish__items-p">20 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-2.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Salted Pasta with mushroom sauce</h3>
+                                    <p class="dish__item-price">$ 4.99</p>
+                                    <p class="dish__items-p">11 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-3.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Beef dumpling in hot and sour soup</h3>
+                                    <p class="dish__item-price">$ 4.99</p>
+                                    <p class="dish__items-p">16 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-4.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Healthy noodle with spinach leaf</h3>
+                                    <p class="dish__item-price">$ 4.99</p>
+                                    <p class="dish__items-p">22 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dish__main-act" id="content-4">
+                        <div class="dish__main">
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-2.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Salted Pasta with mushroom sauce</h3>
+                                    <p class="dish__item-price">$ 5.99</p>
+                                    <p class="dish__items-p">11 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-1.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Spicy seasoned seafood noodles</h3>
+                                    <p class="dish__item-price">$ 5.99</p>
+                                    <p class="dish__items-p">20 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-4.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Healthy noodle with spinach leaf</h3>
+                                    <p class="dish__item-price">$ 5.99</p>
+                                    <p class="dish__items-p">22 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-3.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Beef dumpling in hot and sour soup</h3>
+                                    <p class="dish__item-price">$ 5.99</p>
+                                    <p class="dish__items-p">16 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dish__main-act" id="content-5">
+                        <div class="dish__main">
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-1.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Spicy seasoned seafood noodles</h3>
+                                    <p class="dish__item-price">$ 6.99</p>
+                                    <p class="dish__items-p">20 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-2.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Salted Pasta with mushroom sauce</h3>
+                                    <p class="dish__item-price">$ 6.99</p>
+                                    <p class="dish__items-p">11 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-3.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Beef dumpling in hot and sour soup</h3>
+                                    <p class="dish__item-price">$ 6.99</p>
+                                    <p class="dish__items-p">16 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-4.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Healthy noodle with spinach leaf</h3>
+                                    <p class="dish__item-price">$ 6.99</p>
+                                    <p class="dish__items-p">22 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dish__main-act" id="content-6">
+                        <div class="dish__main">
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-2.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Salted Pasta with mushroom sauce</h3>
+                                    <p class="dish__item-price">$ 7.99</p>
+                                    <p class="dish__items-p">11 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-1.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Spicy seasoned seafood noodles</h3>
+                                    <p class="dish__item-price">$ 7.99</p>
+                                    <p class="dish__items-p">20 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-4.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Healthy noodle with spinach leaf</h3>
+                                    <p class="dish__item-price">$ 7.99</p>
+                                    <p class="dish__items-p">22 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="dish__main-item">
+                                <img class="dish__item-img" src="./img/dish-3.png" alt="">
+                                <div class="dish__item-desc">
+                                    <h3 class="dish__item-title">Beef dumpling in hot and sour soup</h3>
+                                    <p class="dish__item-price">$ 7.99</p>
+                                    <p class="dish__items-p">16 Bowls available</p>
+                                    <button class="dish__items-btn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="" id="bg__cover"></div>
+    </div>
+
+    <div class="burger__wrap burger__wrap--not-active">
+        <h1 class="burger__title">Functions</h1>
+        <div class="burger__inner">
+            <div class="burger__inner-img-desc" data-tooltip="information">
+                <img src="img/information_icon.svg" class="burger__inner-img" alt="">
+                <p class="burger__inner-desc">Information</p>
+            </div>
+            <div class="burger__inner-img-desc">
+                <img src="img/language_icon.svg" class="burger__inner-img" alt="">
+                <p class="burger__inner-desc">Language</p>
+            </div>
+            <div class="burger__inner-img-desc" data-tooltip="order-history" data-active = 'burger'>
+                <img src="img/history_icon.svg" class="burger__inner-img" alt="">
+                <p class="burger__inner-desc">Order history</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="account__wrap account__wrap--not-active">
+        <h1 class="account__title">Profil</h1>
+        <div class="account__inner">
+            <div class="account__inner-info">
+                <div class="account__info-letter-container">
+                    <p class="account__info-letter">D</p>
+                </div>
+                <p class="account__info-name">Denis</p>
+            </div>
+            <p class="account__inner-edit">Edit profile</p>
+        </div>
+        <div class="burger__inner-img-desc account__history" data-tooltip="order__history-account" data-active="account">
+            <img src="img/history_icon.svg" class="account__history-img" alt="">
+            <p class="account__history-p">Order history</p>
+        </div>
+    </div>
+
+    <div class="burger__information-wrap burger__information--not-active">
+        <i class="fa-solid fa-arrow-left fa-2xl burger__information-arrow" data-tooltip="burger__info-arrow"></i>
+        <h1 class="burger__information-title">Information</h1>
+        <div class="information__wrap">
+            <div class="info__wrap">
+                <img src="img/phone_icon.svg" alt="" class="information__logo">
+                <p class="information__p">+998 71 000 00 71</p>
+            </div>
+            <div class="info__wrap">
+                <img src="img/location_icon.svg" alt="" class="information__logo>">
+                <p class="information__p">Tashkent, str. Amir Temur 15</p>
+            </div>
+            <div class="info__wrap">
+                <img src="img/email_icon.svg" alt="" class="information__logo>">
+                <p class="information__p">F.P.D_77@gmail.com</p>
+            </div>
+            <div class="info__wrap">
+                <img src="img/internet_icon.svg" alt="" class="information__logo">
+                <p class="information__p">www.F.P.D_77.com</p>
+            </div>
+            <div class="info__social-media">
+                <img src="img/whatsapp_icon.svg" alt="">
+                <img src="img/instagram_icon.svg" alt="">
+                <img src="img/telegram_icon.svg" alt="">
+                <img src="img/facebook_icon.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="order__history-wrap order__history--not-active">
+        <div class="order__history-title-arrow">
+            <i class="fa-solid fa-arrow-left fa-2xl burger__information-arrow" data-tooltip="order__history-arrow"></i>
+            <h1 class="order__history-title">Orders history</h1>
+        </div>
+        <div class="order__history-inner">
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34562</p>
+                <p class="order__history-date">Tuesday, 2 Feb 2021</p>
+            </div>
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34561</p>
+                <p class="order__history-date">Monday, 1 Feb 2021</p>
+            </div>
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34560</p>
+                <p class="order__history-date">Sanday, 31 Jan 2021</p>
+            </div>
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34559</p>
+                <p class="order__history-date">Friday, 29 Jan 2021</p>
+            </div>
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34558</p>
+                <p class="order__history-date">Wednesday, 27 Jan 2021</p>
+            </div>
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34557</p>
+                <p class="order__history-date">Saturday, 23 Jan 2021</p>
+            </div>
+            <div class="inner-descr">
+                <p class="order__history-p">Orders #34556</p>
+                <p class="order__history-date">Wednesday, 20 Jan 2021</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="order__wrap order__wrap--not-active">
+        <h1 class="order__wrap-title">Orders </h1>
+        <div class="order__inner">
+            <img src="img/English-breakfast-pana-1.png" alt="">
+            <p class="order__inner-des">No Order</p>
+            <p class="order__inner-p">Go find the products you like</p>
+        </div>
+        <button class="order__wrap-btn">To Order</button>
+    </div>
+
     <script src="../js/index.js"></script>
   </body>
 </html>
