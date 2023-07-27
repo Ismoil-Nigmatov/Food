@@ -414,6 +414,8 @@ body{
 
 .li--active{
     background: #252836 !important;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 .border__radius{
@@ -1248,4 +1250,50 @@ input::placeholder{
     transform: translateX(0%);
     transition: transform 1s;
     z-index: 100;
+}
+
+
+#customAlertWrapper {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    z-index: 98;
+}
+
+.custom-alert {
+    background-color: #1F1D2B;
+    font-size: 1.3rem;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+    border-radius: 16px;
+}
+
+.custom-alert-error {
+    background-color: Red;
+    font-size: 1.3rem;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+    border-radius: 16px;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(100%);
 }

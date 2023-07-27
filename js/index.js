@@ -90,7 +90,7 @@
     const continueBtn = document.getElementById('continue');
     const cancel = document.querySelector('.cancel');
     const confirm = document.querySelector('.confirm');
-    let orderId = 1234;
+    localStorage.setItem('ID', JSON.stringify('1234'));
 
     let changeTabTarget;
     let activeOrderHistory;
@@ -154,7 +154,8 @@
                 close(burgerInfoWrap, 'burger__information--active', 'burger__information--not-active');
                 close(orderHistory, 'order__history--active', 'order__history--not-active');
                 if(tabTarget.classList.contains('li--active')) {
-                    if (localStorage.length === 0) {
+                    const existingItems = JSON.parse(localStorage.getItem("dishes")) || [];
+                    if (existingItems.length === 0) {
                         show(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                     }
                     else {
@@ -246,10 +247,9 @@
                 close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
                 const currentDate = new Date();
                 const formattedDate = formatDate(currentDate);
-                generateOrderHTML(orderId , formattedDate);
+                saveOrderToLocalStorage(formattedDate);
                 alert('Your order is accepted');
-                localStorage.clear();
-                orderId++;
+                localStorage.removeItem('dishes');
             }
         }
     }
@@ -409,11 +409,13 @@
   `;
     }
 
-    function generateOrderHTML(id , time){
-        const html = createOrderHistoryHTML(id, time);
+    function generateOrderHTML(){
+        const existingItems = JSON.parse(localStorage.getItem("order")) || [];
+        const orderHistoryHTML = existingItems.map((element) => createOrderHistoryHTML(element.id, element.time)).join('');
 
         const dishContainer = document.querySelector('.order__history-inner');
-        dishContainer.insertAdjacentHTML('beforeend', html);
+        dishContainer.innerHTML = ''
+        dishContainer.insertAdjacentHTML('beforeend', orderHistoryHTML);
     }
 
     function formatDate(date) {
@@ -427,6 +429,78 @@
 
         return `${dayOfWeek}, ${day} ${month} ${year}`;
     }
+
+    function showAlert(text , error) {
+        const customAlertWrapper = document.getElementById("customAlertWrapper");
+        const customAlerts = customAlertWrapper.getElementsByClassName("custom-alert");
+
+        for (let i = 0; i < customAlerts.length; i++) {
+            if (customAlerts[i].classList.contains("show")) {
+                customAlerts[i].classList.add("hide");
+            }
+        }
+
+        const customAlert = document.createElement("div");
+        if(error){
+            customAlert.classList.add('custom-alert-error');
+        }
+        else {
+            customAlert.classList.add("custom-alert");
+        }
+        const customAlertContent = document.createElement("div");
+        customAlertContent.classList.add("custom-alert-content");
+        customAlertContent.innerHTML = `
+            <p>${text}</p>
+        `;
+
+        customAlert.appendChild(customAlertContent);
+
+        customAlertWrapper.prepend(customAlert);
+
+        setTimeout(function() {
+            customAlert.classList.add("show");
+        }, 10);
+
+        setTimeout(function() {
+            hideAlert(customAlert);
+        }, 3000);
+    }
+
+    function hideAlert(alertElement) {
+        alertElement.classList.add("hide");
+
+        alertElement.addEventListener("transitionend", function() {
+            alertElement.remove();
+        });
+    }
+
+    function saveOrderToLocalStorage(time ){
+        const existingItems = JSON.parse(localStorage.getItem("order")) || [];
+        let ID = JSON.parse(localStorage.getItem("ID"));
+        existingItems.push({
+            id: ID,
+            time: time
+        });
+
+        parseInt(ID);
+
+        ID++;
+
+        localStorage.setItem("order", JSON.stringify(existingItems));
+        localStorage.setItem('ID', JSON.stringify(ID));
+        generateOrderHTML();
+    }
+
+    window.addEventListener('load' , generateOrderHTML);
+
+    function changeRadius(btn){
+        let previousElementSibling = btn.previousElementSibling;
+        let nextElementSibling = btn.nextElementSibling;
+
+        previousElementSibling.style.borderTopLeftRadius = 12 + 'px';
+        nextElementSibling.style.borderBottomLeftRadius = 12 + 'px';
+    }
+
 {
     const dishes = document.querySelectorAll('.dish__items-btn');
 
@@ -457,7 +531,7 @@
 
         if (existingItemIndex !== -1) {
             if (existingItems[existingItemIndex].available < existingItems[existingItemIndex].count + 1) {
-                alert('Only ' + available + ' available');
+                showAlert('Only ' + available + ' available', true);
                 return;
             }
             existingItems[existingItemIndex].count++;
@@ -473,7 +547,7 @@
         }
 
         localStorage.setItem("dishes", JSON.stringify(existingItems));
-
+        showAlert('Your food successfully added to the cart !!!');
         generateHTML();
     }
 }
@@ -492,5 +566,6 @@
          evt.currentTarget.classList.add('dish__wrap-btn--active');
      }
 }
+
 
 
