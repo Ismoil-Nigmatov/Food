@@ -1662,6 +1662,16 @@ input::placeholder{
         margin-bottom: 78px;
     }
 
+    .order-type-d{
+        line-height: 48px !important;
+        padding-left: 10px;
+    }
+
+    .order-type-dropdown{
+        width: 150px;
+        bottom: 50px;
+    }
+
     /*.header__input{*/
     /*    position: relative;*/
     /*}*/
