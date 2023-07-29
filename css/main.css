@@ -153,6 +153,7 @@ body{
     display: inline-block;
     padding: 0.6rem 2rem;
     transition: all 1s ease-out;
+    cursor: pointer;
 }
 
 .foods__main-btn--active{
