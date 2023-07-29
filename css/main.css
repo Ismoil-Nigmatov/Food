@@ -1385,10 +1385,10 @@ input::placeholder{
     }
 
     .header__input-search{
-       /*position: absolute;*/
-       /* left: -320px;*/
-       /* top: 104px;*/
-        display: none;
+       position: absolute;
+        left: 44px;
+        top: 104px;
+        width: 30px;
     }
 
     .foods__main-btn:nth-child(1){
@@ -1661,4 +1661,17 @@ input::placeholder{
     .payment__btns{
         margin-bottom: 78px;
     }
+
+    /*.header__input{*/
+    /*    position: relative;*/
+    /*}*/
+
+    /*.header__input-main::before {*/
+    /*    content: "\f002";*/
+    /*    font-family: "Font Awesome 5 Free";*/
+    /*    position: absolute;*/
+    /*    left: 10px;*/
+    /*    top: 50%;*/
+    /*    color: #ffffff;*/
+    /*}*/
 }
