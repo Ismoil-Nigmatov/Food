@@ -139,7 +139,6 @@
 
         if(dataset !==undefined){
             if(dataset === 'tooltip1') {
-
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                 close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                 close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
@@ -202,6 +201,7 @@
             close(orderHistory, 'order__history--active', 'order__history--not-active');
             close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
             close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
+            body.style.overflow = 'visible';
         }
     }
 
@@ -210,6 +210,7 @@
 
         let dataset = tabTarget.dataset.tooltip;
 
+        body.style.overflow = 'hidden';
         console.log(tabTarget);
         if(dataset !== undefined){
             if(dataset === 'information'){
@@ -235,6 +236,7 @@
                 if(activeOrderHistory === 'burger') {
                     close(orderHistory, 'order__history--active', 'order__history--not-active');
                     show(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
+                    body.style.overflow = 'hidden';
                 }else {
                     close(orderHistory, 'order__history--active', 'order__history--not-active');
                     show(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
@@ -244,6 +246,7 @@
                 close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                 removeActiveIcon();
                 hideRadius();
+                body.style.overflow = 'visible';
             }
             else if(dataset === 'order'){
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
@@ -266,6 +269,7 @@
                 saveOrderToLocalStorage(formattedDate);
                 alert('Your order is accepted');
                 localStorage.removeItem('dishes');
+                body.style.overflow = 'visible';
             }
         }
     }

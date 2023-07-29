@@ -1546,7 +1546,7 @@ input::placeholder{
     }
 
     .payment__order-type{
-        margin-bottom: 30px;
+        margin-bottom: 78px;
     }
 
     .nav_list{
@@ -1656,5 +1656,9 @@ input::placeholder{
         position: fixed;
         z-index: 99;
         overflow-y: scroll;
+    }
+
+    .payment__btns{
+        margin-bottom: 78px;
     }
 }
