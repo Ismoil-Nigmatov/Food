@@ -1459,7 +1459,7 @@ input::placeholder{
     }
 
     .wrap{
-        width: 390px;
+        width: 100%;
         max-height: calc(100% - 90px);
         border-radius: 0;
     }
