@@ -119,6 +119,8 @@
 
         if (tabTarget.classList.contains('li--active')) {
             removeActiveIcon(tabTarget);
+            hideRadius();
+            changeRadius(li[1]);
         } else {
             li.forEach(function (element) {
                 element.classList.remove('li--active');
@@ -128,12 +130,15 @@
             tabTarget.classList.add('li--active');
             tabTarget.children[0].classList.add('nav__menu-btn--active');
             tabTarget.children[0].children[0].classList.add('aside__icon--active');
+            hideRadius();
+            changeRadius(tabTarget);
         }
 
         let dataset = tabTarget.dataset.tooltip;
 
         if(dataset !==undefined){
             if(dataset === 'tooltip1') {
+
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                 close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                 close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
@@ -228,6 +233,7 @@
             else if(dataset === 'to-order'){
                 close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                 removeActiveIcon();
+                hideRadius();
             }
             else if(dataset === 'order'){
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
@@ -254,7 +260,7 @@
         }
     }
 
-    function removeActiveIcon(){
+    function removeActiveIcon(tabTarget){
         changeTabTarget.classList.remove('li--active');
         changeTabTarget.children[0].classList.remove('nav__menu-btn--active');
         changeTabTarget.children[0].children[0].classList.remove('aside__icon--active');
@@ -270,13 +276,17 @@
         cover.classList.remove('background__cover');
     }
 
-    function show (element , activeClass , notActiveClass){
+
+
+function show (element , activeClass , notActiveClass){
         element.classList.remove(notActiveClass);
         element.classList.add(activeClass);
         cover.classList.add('background__cover');
     }
 
     cover.addEventListener('click' , function (){
+        hideRadius();
+        changeRadius(li[1]);
         close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
         close(burgerInfoWrap, 'burger__information--active', 'burger__information--not-active');
         close(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
@@ -493,14 +503,24 @@
 
     window.addEventListener('load' , generateOrderHTML);
 
-    function changeRadius(btn){
+    function changeRadius(btn) {
         let previousElementSibling = btn.previousElementSibling;
         let nextElementSibling = btn.nextElementSibling;
 
-        previousElementSibling.style.borderTopLeftRadius = 12 + 'px';
-        nextElementSibling.style.borderBottomLeftRadius = 12 + 'px';
+        console.log(nextElementSibling);
+        if (previousElementSibling) {
+            previousElementSibling.style.borderBottomRightRadius = '16px';
+        }
+        if (nextElementSibling) {
+            nextElementSibling.style.borderTopRightRadius = '16px';
+        }
     }
 
+    function hideRadius() {
+        li.forEach(function (element){
+            element.style.borderRadius = '0px';
+        })
+    }
 {
     const dishes = document.querySelectorAll('.dish__items-btn');
 
