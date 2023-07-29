@@ -91,6 +91,7 @@
     const cancel = document.querySelector('.cancel');
     const confirm = document.querySelector('.confirm');
     localStorage.setItem('ID', JSON.stringify('1234'));
+    const body = document.body;
 
     let changeTabTarget;
     let activeOrderHistory;
@@ -147,8 +148,10 @@
                 close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
                 if(tabTarget.classList.contains('li--active')){
                    show(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
+                   body.style.overflow = 'hidden';
                 }else {
                    close(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
+                    body.style.overflow = 'visible';
                 }
             }
             else if(dataset === 'tooltip7'){
@@ -162,14 +165,17 @@
                     const existingItems = JSON.parse(localStorage.getItem("dishes")) || [];
                     if (existingItems.length === 0) {
                         show(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+                        body.style.overflow = 'hidden';
                     }
                     else {
                         generateHTML();
                         show(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
+                        body.style.overflow = 'hidden';
                     }
                 }
                 else {
                     close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+                    body.style.overflow = 'visible';
                 }
             }
             else if(dataset === 'tooltip8'){
@@ -181,8 +187,10 @@
                 close(orderHistory, 'order__history--active', 'order__history--not-active');
                 if(tabTarget.classList.contains('li--active')){
                     show(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
+                    body.style.overflow = 'hidden';
                 }else {
                     close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
+                    body.style.overflow = 'visible';
                 }
             }
         }
