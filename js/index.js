@@ -91,6 +91,7 @@
     const cancel = document.querySelector('.cancel');
     const confirm = document.querySelector('.confirm');
     localStorage.setItem('ID', JSON.stringify('1234'));
+    const body = document.body;
 
     let changeTabTarget;
     let activeOrderHistory;
@@ -138,7 +139,6 @@
 
         if(dataset !==undefined){
             if(dataset === 'tooltip1') {
-
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                 close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                 close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
@@ -147,8 +147,10 @@
                 close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
                 if(tabTarget.classList.contains('li--active')){
                    show(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
+                   body.style.overflow = 'hidden';
                 }else {
                    close(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
+                    body.style.overflow = 'visible';
                 }
             }
             else if(dataset === 'tooltip7'){
@@ -162,14 +164,17 @@
                     const existingItems = JSON.parse(localStorage.getItem("dishes")) || [];
                     if (existingItems.length === 0) {
                         show(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+                        body.style.overflow = 'hidden';
                     }
                     else {
                         generateHTML();
                         show(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
+                        body.style.overflow = 'hidden';
                     }
                 }
                 else {
                     close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+                    body.style.overflow = 'visible';
                 }
             }
             else if(dataset === 'tooltip8'){
@@ -181,17 +186,22 @@
                 close(orderHistory, 'order__history--active', 'order__history--not-active');
                 if(tabTarget.classList.contains('li--active')){
                     show(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
+                    body.style.overflow = 'hidden';
                 }else {
                     close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
+                    body.style.overflow = 'visible';
                 }
             }
         }
         else {
-            close(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
-            close(burgerInfoWrap, 'burger__information--active', 'burger__information--not-active');
-            close(orderHistory, 'order__history--active', 'order__history--not-active');
             close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+            close(burgerInfoWrap, 'burger__information--active', 'burger__information--not-active');
+            close(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
             close(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
+            close(orderHistory, 'order__history--active', 'order__history--not-active');
+            close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
+            close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
+            body.style.overflow = 'visible';
         }
     }
 
@@ -200,6 +210,7 @@
 
         let dataset = tabTarget.dataset.tooltip;
 
+        body.style.overflow = 'hidden';
         console.log(tabTarget);
         if(dataset !== undefined){
             if(dataset === 'information'){
@@ -225,6 +236,7 @@
                 if(activeOrderHistory === 'burger') {
                     close(orderHistory, 'order__history--active', 'order__history--not-active');
                     show(burgerWrap, 'burger__wrap--active', 'burger__wrap--not-active');
+                    body.style.overflow = 'hidden';
                 }else {
                     close(orderHistory, 'order__history--active', 'order__history--not-active');
                     show(accountWrap, 'account__wrap--active', 'account__wrap--not-active');
@@ -234,10 +246,12 @@
                 close(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
                 removeActiveIcon();
                 hideRadius();
+                body.style.overflow = 'visible';
             }
             else if(dataset === 'order'){
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                 removeActiveIcon();
+                body.style.overflow = 'visible';
             }
             else if(dataset === 'continue'){
                 console.log('here')
@@ -256,6 +270,7 @@
                 saveOrderToLocalStorage(formattedDate);
                 alert('Your order is accepted');
                 localStorage.removeItem('dishes');
+                body.style.overflow = 'visible';
             }
         }
     }
