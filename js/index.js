@@ -251,6 +251,7 @@
             else if(dataset === 'order'){
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                 removeActiveIcon();
+                body.style.overflow = 'visible';
             }
             else if(dataset === 'continue'){
                 console.log('here')
