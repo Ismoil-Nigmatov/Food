@@ -1489,7 +1489,7 @@ input::placeholder{
 
     .order__wrap-btn{
         width: 350px;
-        margin-top: 90px;
+        margin-top: 40px;
         margin-left: 20px;
     }
     .order__inner img{
@@ -1655,5 +1655,6 @@ input::placeholder{
     .payment__wrap--active{
         position: fixed;
         z-index: 99;
+        overflow-y: scroll;
     }
 }
