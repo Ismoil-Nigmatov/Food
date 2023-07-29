@@ -1669,7 +1669,7 @@ input::placeholder{
 
     .order-type-dropdown{
         width: 150px;
-        bottom: 0px;
+        bottom: 0;
     }
 
     /*.header__input{*/
