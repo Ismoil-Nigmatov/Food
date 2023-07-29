@@ -1669,7 +1669,11 @@ input::placeholder{
 
     .order-type-dropdown{
         width: 150px;
-        bottom: -50px;
+        display: none !important;
+    }
+
+    .oder__type-dropdown{
+        border-radius: 8px !important;
     }
 
     /*.header__input{*/
