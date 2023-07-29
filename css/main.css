@@ -47,11 +47,10 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    max-width: 100px;
-    width: 100%;
+    width: 100px;
     height: 100vh;
-    border-radius: 16px 0 0 16px;
-    background: #1F1D2B;
+    /*border-radius: 16px 0 0 16px;*/
+    background: #252836;
     overflow: hidden;
     z-index: 100;
 }
@@ -63,7 +62,6 @@ body{
     flex-direction: column;
     height: 100%;
 }
-
 .nav__menu-btn {
     background: none;
     border: none;
@@ -78,7 +76,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1s ease-out;
 }
 
 .header {
@@ -214,8 +211,7 @@ body{
 .dish__main-item {
     background: #1F1D2B;
     border-radius: 10px;
-    max-width: 250px;
-    width: 100%;
+    width: 250px;
     height: 340px;
     padding: 20px;
     margin-top: 144px;
@@ -336,7 +332,7 @@ body{
 }
 
 .burger__wrap{
-    /*display: none;*/
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -344,7 +340,6 @@ body{
     width: 500px;
     height: 100%;
     background-color: #252836;
-    /*transform: translateX(100%);*/
 }
 
 .burger__title{
@@ -386,14 +381,14 @@ body{
 }
 
 .burger__wrap--not-active{
-    transform: translateX(100%);
-    transition: transform 1s;
+    transition: width 1s;
+    width: 0;
 }
 
 .burger__wrap--active{
     display: block;
-    transform: translateX(0%);
-    transition: transform 1s;
+    transition: width 1s;
+    width: 500px;
     z-index: 100;
 }
 
@@ -413,9 +408,21 @@ body{
 }
 
 .li--active{
-    background: #252836 !important;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    background: #1F1D2B !important;
+    position: relative;
+    z-index: 3;
+}
+
+.li--active::after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #252836;
+    border-radius: 12px 0 0 12px;
 }
 
 .border__radius{
@@ -428,6 +435,7 @@ body{
 }
 
 .account__wrap{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -538,6 +546,7 @@ body{
 }
 
 .burger__information-wrap{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -606,6 +615,7 @@ body{
 }
 
 .order__history-wrap{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -683,6 +693,7 @@ body{
 }
 
 .order__wrap{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -755,6 +766,7 @@ body{
 }
 
 .dish__wrap{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -988,6 +1000,7 @@ body{
 
 
 .payment__wrap{
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -1296,4 +1309,246 @@ input::placeholder{
 .hide {
     opacity: 0;
     transform: translateY(100%);
+}
+
+
+@media (max-width: 415px) {
+    .container{
+       padding: 0 30px;
+    }
+
+    body{
+        overflow-y: visible;
+    }
+
+    .nav{
+        bottom: 0;
+        top: auto;
+        height: 90px;
+        width: 100%;
+    }
+
+    .nav__menu{
+        flex-direction: row;
+    }
+
+    .nav_list:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(7)):not(:nth-child(8)) {
+        display: none;
+    }
+
+    .header__wrap{
+        display: block;
+    }
+
+    .header__input{
+        margin-top: 20px;
+    }
+
+    .foods__main{
+        align-items: flex-end;
+        gap: 10px;
+        overflow: scroll;
+    }
+
+    .foods__main-btn{
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .dishes{
+        margin-top: 10px;
+    }
+
+    .dishes__top-dropdown{
+        width: 120px;
+        border: none;
+        padding-right: 20px;
+        height: 46px;
+        border-radius: 8px;
+    }
+
+    .dishes__top-title{
+        font-size: 20px;
+    }
+
+    .dishes__dropdown-content{
+        width: 120px;
+        border: none;
+    }
+
+    .dish__main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 2150px;
+    }
+
+    .header__input-search{
+       /*position: absolute;*/
+       /* left: -320px;*/
+       /* top: 104px;*/
+        display: none;
+    }
+
+    .foods__main-btn:nth-child(1){
+        white-space: nowrap;
+    }
+
+    .foods__main-btn:nth-child(2){
+        white-space: nowrap;
+    }
+
+    .foods__main{
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .foods__main::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .nav_list:nth-child(1) {
+        order: 1;
+    }
+    .nav_list:nth-child(4) {
+        order: 2;
+    }
+    .nav_list:nth-child(2) {
+        order: 3;
+    }
+    .nav_list:nth-child(7) {
+        order: 4;
+    }
+    .nav_list:nth-child(8) {
+        order: 5;
+    }
+
+    .header{
+        padding-top: 17px;
+    }
+
+    .hader__title{
+        font-size: 28px;
+        margin-bottom: 0;
+        line-height: 140%;
+    }
+
+    .dishes__top{
+        margin-top: 18px;
+        align-items: flex-start;
+    }
+
+    .dish__main-item{
+        width: 300px;
+        padding: 35px;
+        /*margin-left: 35px;*/
+    }
+
+    .dish__item-desc{
+        gap: 15px;
+    }
+
+    .dish__items-btn{
+        margin-top: 4px;
+        width: 100%;
+    }
+
+    .li--active:after{
+        position: relative;
+    }
+
+    .wrap{
+        width: 390px;
+        height: 90%;
+        border-radius: 0;
+    }
+
+    .dish__item-img{
+        margin-left: 12px;
+    }
+
+    .information__wrap{
+        width: 350px;
+        margin: 0 0 0 20px;
+    }
+
+    .info__social-media{
+        padding-left: 25px;
+        gap: 20%;
+    }
+
+    .burger__information-arrow{
+        margin-left: 20px;
+    }
+
+    .burger__information-title{
+        margin-left: 20px;
+    }
+
+    .order__wrap-btn{
+        width: 350px;
+        margin-top: 120px;
+        margin-left: 20px;
+    }
+    .order__inner img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .account__inner{
+        width: 350px;
+        margin-left: 20px;
+    }
+
+    .account__history{
+        width: 350px;
+        margin-left: 20px;
+    }
+
+    .dish__wrap .order__wrap-btn{
+        margin-bottom: 0;
+        margin-top: 90px;
+    }
+
+    .edit__input{
+        width: 250px !important;
+    }
+
+    .payment__inputs input{
+        width: 340px;
+    }
+
+    .input input{
+        width: 150px;
+    }
+
+    .table input{
+        width: 150px;
+    }
+
+    #order-type{
+        width: 150px;
+    }
+
+    .payment__method{
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .cancel{
+        width: 150px;
+    }
+
+    .confirm{
+        width: 150px;
+    }
+
+    .payment__order-type{
+        margin-bottom: 70px;
+    }
+
+    .nav_list{
+        border-radius: 0 !important;
+    }
+
 }

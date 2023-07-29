@@ -13,7 +13,7 @@
   <body>
     <aside class="nav">
       <ul class="nav__menu">
-        <li class="nav_list" data-tooltip="tooltip1">
+        <li class="nav_list" data-tooltip="tooltip1" style="border-bottom-right-radius: 16px">
           <button class="nav__menu-btn">
               <i style="font-size: 1.5rem" class="icons fa-solid fa-bars fa-2xl"></i>
           </button>
@@ -23,7 +23,7 @@
               <i style="font-size: 1.5rem" class="icons fa-solid fa-house fa-2xl aside__icon--active"></i>
           </button>
         </li>
-        <li class="nav_list">
+        <li class="nav_list" style="border-top-right-radius: 16px">
           <button class="nav__menu-btn">
               <i style="font-size: 1.5rem" class="icons fa-solid fa-percent fa-2xl"></i>
           </button>
@@ -82,14 +82,14 @@
 
         <section class="foods">
             <div class="container">
-                <div class="foods__main">
-                    <a href="#" class="foods__main-btn foods__main-btn--active" data-button="content-1">Hot Dishes</a>
-                    <a href="#" class="foods__main-btn" data-button="content-2">Cold Dishes</a>
-                    <a href="#" class="foods__main-btn" data-button="content-3">Soup</a>
-                    <a href="#" class="foods__main-btn" data-button="content-4">Grill</a>
-                    <a href="#" class="foods__main-btn" data-button="content-5">Appetizer</a>
-                    <a href="#" class="foods__main-btn" data-button="content-6">Dessert</a>
-                </div>
+                <ul class="foods__main">
+                    <li class="foods__main-btn foods__main-btn--active" data-button="content-1">Hot Dishes</li>
+                    <li class="foods__main-btn" data-button="content-2">Cold Dishes</li>
+                    <li class="foods__main-btn" data-button="content-3">Soup</li>
+                    <li class="foods__main-btn" data-button="content-4">Grill</li>
+                    <li class="foods__main-btn" data-button="content-5">Appetizer</li>
+                    <li     class="foods__main-btn" data-button="content-6">Dessert</li>
+                </ul>
 
             </div>
         </section>
@@ -362,7 +362,7 @@
         <div class="" id="bg__cover"></div>
     </div>
 
-    <div class="burger__wrap burger__wrap--not-active">
+    <div class="burger__wrap burger__wrap--not-active wrap">
         <h1 class="burger__title">Functions</h1>
         <div class="burger__inner">
             <div class="burger__inner-img-desc" data-tooltip="information">
@@ -380,7 +380,7 @@
         </div>
     </div>
 
-    <div class="account__wrap account__wrap--not-active">
+    <div class="account__wrap account__wrap--not-active wrap">
         <h1 class="account__title">Profil</h1>
         <div class="account__inner">
             <div class="account__inner-info">
@@ -397,7 +397,7 @@
         </div>
     </div>
 
-    <div class="burger__information-wrap burger__information--not-active">
+    <div class="burger__information-wrap burger__information--not-active wrap">
         <i class="fa-solid fa-arrow-left fa-2xl burger__information-arrow" data-tooltip="burger__info-arrow"></i>
         <h1 class="burger__information-title">Information</h1>
         <div class="information__wrap">
@@ -426,7 +426,7 @@
         </div>
     </div>
 
-    <div class="order__history-wrap order__history--not-active">
+    <div class="order__history-wrap order__history--not-active wrap">
         <div class="order__history-title-arrow">
             <i class="fa-solid fa-arrow-left fa-2xl burger__information-arrow" data-tooltip="order__history-arrow"></i>
             <h1 class="order__history-title">Orders history</h1>
@@ -463,7 +463,7 @@
         </div>
     </div>
 
-    <div class="order__wrap order__wrap--not-active">
+    <div class="order__wrap order__wrap--not-active wrap">
         <h1 class="order__wrap-title">Orders </h1>
         <div class="order__inner">
             <img src="img/English-breakfast-pana-1.png" alt="">
@@ -473,7 +473,7 @@
         <button class="order__wrap-btn" data-tooltip="to-order">To Order</button>
     </div>
 
-    <div class="dish__wrap dish__wrap--not-active">
+    <div class="dish__wrap dish__wrap--not-active wrap">
         <div class="dish__wrap-title-arrow">
             <i class="fa-solid fa-arrow-left fa-2xl burger__information-arrow" data-tooltip="order"></i>
             <h1 class="dish__wrap-title">Orders #34562</h1>
@@ -503,7 +503,7 @@
         <button class="order__wrap-btn" id="continue" data-tooltip="continue">Continue to Payment</button>
     </div>
 
-    <div class="payment__wrap payment__wrap--not-active">
+    <div class="payment__wrap payment__wrap--not-active wrap">
         <div class="payment-descr">
             <p class="payment__title">Payment</p>
             <p class="payment__available">3 payment method available</p>
