@@ -1555,4 +1555,12 @@ input::placeholder{
     .dishes__dropdown-content{
         top: 40px;
     }
+
+    .burger__inner{
+        margin-top: 94px;
+    }
+
+    .burger__inner-img-desc{
+        gap: 30px;
+    }
 }
