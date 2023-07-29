@@ -1460,7 +1460,7 @@ input::placeholder{
 
     .wrap{
         width: 390px;
-        height: 90%;
+        max-height: calc(100% - 90px);
         border-radius: 0;
     }
 
@@ -1552,4 +1552,7 @@ input::placeholder{
         border-radius: 0 !important;
     }
 
+    .dishes__dropdown-content{
+        top: 40px;
+    }
 }
