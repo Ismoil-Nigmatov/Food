@@ -1489,7 +1489,7 @@ input::placeholder{
 
     .order__wrap-btn{
         width: 350px;
-        margin-top: 120px;
+        margin-top: 90px;
         margin-left: 20px;
     }
     .order__inner img{
@@ -1546,7 +1546,7 @@ input::placeholder{
     }
 
     .payment__order-type{
-        margin-bottom: 70px;
+        margin-bottom: 30px;
     }
 
     .nav_list{
@@ -1615,5 +1615,10 @@ input::placeholder{
 
     .order__inner{
         margin-top: 40px;
+    }
+
+    .payment-descr{
+        padding-bottom: 24px;
+        margin: 30px 30px 24px 30px;
     }
 }
