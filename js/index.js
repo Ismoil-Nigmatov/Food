@@ -168,6 +168,9 @@
                     }
                     else {
                         generateHTML();
+                        const orderId = document.querySelector('.dish__wrap-title');
+                        let ID = JSON.parse(localStorage.getItem("ID"));
+                        orderId.textContent = 'Orders #' + ID;
                         show(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                         body.style.overflow = 'hidden';
                     }
@@ -259,7 +262,7 @@
                 show(payment, 'payment__wrap--active', 'payment__wrap--not-active');
             }
             else if(dataset === 'cancel'){
-                localStorage.clear();
+                localStorage.removeItem('dishes');
                 close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
                 show(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
             }
@@ -271,6 +274,9 @@
                 alert('Your order is accepted');
                 localStorage.removeItem('dishes');
                 body.style.overflow = 'visible';
+                removeActiveIcon();
+                hideRadius()
+                changeRadius(li[1]);
             }
         }
     }
@@ -325,9 +331,9 @@ function show (element , activeClass , notActiveClass){
             </div>
             <div class="dish__wrap-sum">
                 <div class="sum__quantity">
-                    <img src="../img/minus.svg" class="plm__icons" alt="" data-tooltip="minus">
+                    <button class="plm__icons" data-tooltip="minus">-</button>
                     <p class="sum__quantity">${dish.count}</p>
-                    <img src="../img/plus.svg" class="plm__icons" alt="" data-tooltip="plus">
+                    <button class="plm__icons" data-tooltip="plus">+</button>
                 </div>
                     <p class="sum__total-price">${totalPrice}</p>
             </div>
