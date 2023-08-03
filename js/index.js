@@ -65,12 +65,31 @@
         element.addEventListener('click' , giveValue);
     })
 
-    function giveValue(evt){
+    function giveValue(evt) {
         let data = value.textContent;
         const tabTarget = evt.currentTarget;
 
         value.textContent = tabTarget.textContent;
         tabTarget.textContent = data;
+
+        const isMediaQueryMatched = window.matchMedia('(max-width: 420px)').matches;
+
+        if (isMediaQueryMatched) {
+            const dropdown = document.querySelector('.dishes__top-dropdown');
+            const dropdownP = document.querySelector('.dishes__dropdown-content');
+
+            console.log(value);
+            console.log(value.textContent);
+            if(value.textContent.length < 7){
+                dropdown.style.width = '120px';
+                dropdownP.style.width = '120px';
+            }
+            else{
+                dropdown.style.width = '144px';
+                dropdownP.style.width = '144px'
+            }
+        }
+
     }
 }
 
@@ -542,6 +561,8 @@ function show (element , activeClass , notActiveClass){
             element.style.borderRadius = '0px';
         })
     }
+
+
 {
     const dishes = document.querySelectorAll('.dish__items-btn');
 
