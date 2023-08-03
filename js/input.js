@@ -27,6 +27,19 @@ function formatExpirationDate(event) {
     event.target.value = input;
 }
 
+const cvv = document.getElementById('cvv');
+cvv.addEventListener('input', formatCvv);
+
+function formatCvv(event){
+    event.target.value = event.target.value.replace(/\D/g, '');
+}
+
+const table = document.getElementById('table');
+table.addEventListener('input', formatTable);
+
+function formatTable(event){
+    event.target.value = event.target.value.replace(/\D/g, '');
+}
 
 const div = document.getElementById('order-type');
 const dropDown = document.querySelector('.order-type-d');
