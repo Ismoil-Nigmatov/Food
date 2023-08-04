@@ -1185,6 +1185,7 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     gap: 8px;
+    position: relative;
 }
 
 .custom--fuck {
@@ -1239,7 +1240,8 @@ input::placeholder{
 .order-type-dropdown{
     display: none;
     position: absolute;
-    bottom: 73px;
+    bottom: 3px;
+    transform: translateY(95%);
     background-color: #1F1D2B;
     width: 203px;
     border-width: 0 1px 1px 1px;
@@ -1255,7 +1257,7 @@ input::placeholder{
 }
 
 .order-type-dropdown p {
-    padding: 14px;
+    padding: 14px 30px 14px 33px;
     color: #E0E6E9;
     font-family: 'BR' , sans-serif;
     font-size: 14px;
@@ -1727,7 +1729,6 @@ input::placeholder{
 
     .order-type-dropdown{
         width: 150px;
-        bottom: 120px;
     }
 
     .oder__type-dropdown{
