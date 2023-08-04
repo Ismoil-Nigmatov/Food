@@ -286,6 +286,7 @@
                 localStorage.removeItem('dishes');
                 close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
                 show(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+                count();
             }
             else if(dataset === 'confirm'){
                 close(payment, 'payment__wrap--active', 'payment__wrap--not-active');
@@ -298,6 +299,7 @@
                 removeActiveIcon();
                 hideRadius()
                 changeRadius(li[1]);
+                count();
             }
         }
     }
@@ -414,6 +416,7 @@ function show (element , activeClass , notActiveClass){
             }
         }
         generateHTML();
+        count();
     }
 
     function changeQuantity(evt){
@@ -445,11 +448,13 @@ function show (element , activeClass , notActiveClass){
             localStorage.clear();
                 close(dishWrap , 'dish__wrap--active' , 'dish__wrap--not-active');
                 show(orderWrap, 'order__wrap--active', 'order__wrap--not-active');
+                count();
             }
         else {
             localStorage.setItem('dishes', JSON.stringify(dishesData));
         }
         generateHTML();
+        count()
     }
 
     function createOrderHistoryHTML(id , time){
@@ -544,6 +549,7 @@ function show (element , activeClass , notActiveClass){
     }
 
     window.addEventListener('load' , generateOrderHTML);
+    window.addEventListener('load' , count);
 
     function changeRadius(btn) {
         let previousElementSibling = btn.previousElementSibling;
@@ -613,9 +619,21 @@ function show (element , activeClass , notActiveClass){
         localStorage.setItem("dishes", JSON.stringify(existingItems));
         showAlert('Your food successfully added to the cart !!!');
         generateHTML();
+        count();
     }
 }
 
+    function count(){
+    const count = document.querySelector('.count');
+    const existingItems = JSON.parse(localStorage.getItem("dishes")) || [];
+
+    count.style.display = 'block';
+    count.textContent = existingItems.length;
+
+    if(count.textContent === '0'){
+        count.style.display = 'none';
+    }
+}
 
 {
     let dishBtns = document.querySelectorAll('.dish__wrap-btn');

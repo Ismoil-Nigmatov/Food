@@ -65,6 +65,7 @@ body{
     border: none;
     cursor: pointer;
     padding: 16px;
+    position: relative;
 }
 
 .nav__menu li {
@@ -1345,6 +1346,17 @@ input::placeholder{
     transform: translateY(100%);
 }
 
+.count{
+    display: none;
+    color: #EA7C69;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
 
 @media (max-width: 415px) {
     .container{
@@ -1700,7 +1712,7 @@ input::placeholder{
 
     .order-type-dropdown{
         width: 150px;
-        display: none !important;
+        bottom: 120px;
     }
 
     .oder__type-dropdown{
