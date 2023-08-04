@@ -44,22 +44,12 @@ function formatTable(event){
 const div = document.getElementById('order-type');
 const dropDown = document.querySelector('.order-type-d');
 const select = document.querySelector('.order-type-dropdown');
+const customFuck = document.querySelector('.custom--fuck')
 
-div.addEventListener('click', showDropDown);
-let toggleButton = true;
+customFuck.addEventListener('click', showDropDown);
 function showDropDown() {
-    console.log('div');
-    if (toggleButton) {
-        select.style.display = 'flex';
-        select.style.flexDirection = 'column';
-        div.classList.add('oder__type-dropdown');
-    } else {
-        select.style.display = 'none';
-        div.classList.remove('oder__type-dropdown');
-    }
-
-    toggleButton = !toggleButton;
-
+    select.classList.toggle('active');
+    div.classList.toggle('oder__type-dropdown');
 }
 
 window.onclick = function (e) {
