@@ -274,6 +274,8 @@
                 close(dish , 'dish__wrap--active' , 'dish__wrap--not-active');
                 removeActiveIcon();
                 body.style.overflow = 'visible';
+                hideRadius()
+                changeRadius(li[1])
             }
             else if(dataset === 'continue'){
                 console.log('here')

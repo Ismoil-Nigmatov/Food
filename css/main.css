@@ -29,8 +29,6 @@
 
 body{
     background: #252836;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .main .background__cover {
@@ -111,7 +109,7 @@ body{
 }
 
 .header__input-main {
-    padding: 14px 14px 14px 66px;
+    padding: 16px 14px 16px 66px;
     background: linear-gradient(0deg, #393C49, #393C49),
         linear-gradient(0deg, #2D303E, #2D303E);
     border-radius: 8px;
@@ -214,7 +212,7 @@ body{
     border-radius: 10px;
     width: 250px;
     height: 340px;
-    padding: 20px;
+    padding: 25px;
     margin-top: 144px;
 }
 
@@ -446,6 +444,10 @@ body{
     background-color: #252836;
 }
 
+.account__wrap .burger__inner-img-desc{
+    padding-left: 17px;
+}
+
 .account__title{
     color: #ffffff;
     font-family: BR, sans-serif;
@@ -524,7 +526,7 @@ body{
 .account__history-img{
     width: 24px;
     height: 24px;
-    margin-left: 17px;
+    /*margin-left: 17px;*/
 }
 
 .account__history-p{
@@ -562,7 +564,18 @@ body{
     font-family: 'BR' , sans-serif;
     font-size: 28px;
     font-weight: 500;
-    margin: 30px 0 40px 30px ;
+    /*margin: 30px 0 40px 30px ;*/
+}
+
+.burger__arrow{
+    display: flex;
+    align-items: center;
+    margin: 30px 0 87px 30px;
+    gap: 40px;
+}
+
+.burger__arrow .burger__information-arrow{
+    margin: 0;
 }
 
 .information__wrap{
@@ -641,6 +654,7 @@ body{
     width: 438px;
     margin-left: 30px;
     margin-top: 30px;
+    overflow: hidden;
 }
 
 .inner-descr{
@@ -718,7 +732,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 80px
+    margin-top: 144px
 }
 
 .order__inner-des{
@@ -746,7 +760,8 @@ body{
     width: 440px;
     padding: 14px;
     margin-left: 30px;
-    margin-top: 80px;
+    margin-top: 174px;
+    margin-bottom: 70px;
     color: #FAFAFA;
     font-family: 'BR' ,  sans-serif;
     font-size: 18px;
@@ -764,6 +779,7 @@ body{
     transform: translateX(0%);
     transition: transform 1s;
     z-index: 100;
+    overflow-y: auto;
 }
 
 .dish__wrap{
@@ -781,7 +797,7 @@ body{
     display: flex;
     align-items: center;
     margin-top: 30px;
-    gap: 36px;
+    gap: 56px;
 }
 
 .dish__wrap-title-arrow .burger__information-arrow{
@@ -938,6 +954,11 @@ body{
     font-family: 'BR' , sans-serif;
     font-weight: 400;
     font-size: 14px;
+    outline: none;
+}
+
+.edit__input::placeholder{
+    color: #889898;
 }
 
 .edit__delete-icon{
@@ -1378,6 +1399,7 @@ input::placeholder{
         padding-right: 20px;
         height: 46px;
         border-radius: 8px;
+        margin-bottom: 16px;
     }
 
     .dishes__top-title{
@@ -1417,7 +1439,7 @@ input::placeholder{
     }
 
     .foods__main::-webkit-scrollbar{
-        width: 0;
+        display: none;
     }
 
     .nav_list:nth-child(1) {
@@ -1454,7 +1476,13 @@ input::placeholder{
     .dish__main-item{
         width: 300px;
         padding: 35px;
+        height: 400px;
+        margin-top: 80px;
         /*margin-left: 35px;*/
+    }
+
+    .dish__item-title{
+        margin-top: 26px;
     }
 
     .dish__item-desc{
@@ -1462,7 +1490,7 @@ input::placeholder{
     }
 
     .dish__items-btn{
-        margin-top: 4px;
+        margin-top: 5px;
         width: 100%;
     }
 
@@ -1477,12 +1505,12 @@ input::placeholder{
     }
 
     .dish__item-img{
-        margin-left: 12px;
+        width: 230px;
     }
 
     .information__wrap{
         width: 350px;
-        margin: 0 0 0 20px;
+        margin: auto;
     }
 
     .info__social-media{
@@ -1495,14 +1523,8 @@ input::placeholder{
         margin-left: 20px;
     }
 
-    .burger__information-title{
-        margin-left: 20px;
-    }
-
     .order__wrap-btn{
         width: 350px;
-        margin-top: 40px;
-        margin-left: 20px;
     }
     .order__inner img{
         width: 300px;
@@ -1511,17 +1533,15 @@ input::placeholder{
 
     .account__inner{
         width: 350px;
-        margin-left: 20px;
+        margin: auto;
     }
 
     .account__history{
         width: 350px;
-        margin-left: 20px;
     }
 
     .dish__wrap .order__wrap-btn{
         margin-bottom: 20px;
-        margin-top: 90px;
     }
 
     .edit__input{
@@ -1584,8 +1604,7 @@ input::placeholder{
     }
 
     .order__history-inner{
-        width: 330px;
-        margin-left: 30px;
+        width: 350px;
         margin-top: 18px;
     }
 
@@ -1686,6 +1705,10 @@ input::placeholder{
 
     .oder__type-dropdown{
         border-radius: 8px !important;
+    }
+
+    input{
+        outline: none;
     }
 
     /*.header__input{*/
