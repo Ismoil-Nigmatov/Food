@@ -1187,6 +1187,16 @@ input::placeholder{
     gap: 8px;
 }
 
+.custom--fuck {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: transparent;
+    z-index: 4;
+}
+
 .payment__btns{
     display: flex;
     justify-content: space-between;
@@ -1237,6 +1247,11 @@ input::placeholder{
     border-color: transparent #393C49 #393C49 #393C49;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.order-type-dropdown.active {
+    display: flex !important;
+    flex-direction: column;
 }
 
 .order-type-dropdown p {
