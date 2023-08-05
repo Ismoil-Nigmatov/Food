@@ -74,6 +74,8 @@ function giveValue(evt){
 
     value.textContent = tabTarget.textContent;
     tabTarget.textContent = data;
+    div.classList.remove('oder__type-dropdown');
+    select.classList.remove('active');
 }
 
 
